@@ -1,0 +1,439 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #080B0D;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    background-color: #080B0D;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #20302F;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #00E5C3;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #DDDDDD;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00E5C3;
+}
+
+/* PORTADA */
+.portada {
+    min-height: 450px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        radial-gradient(ellipse at 80% 50%,
+        #123C3B 0%, #080B0D 65%);
+}
+
+.portada-texto {
+    max-width: 570px;
+}
+
+.etiqueta {
+    color: #00E5C3;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.portada h1 {
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.portada h1 span,
+.titulo-seccion h2 span {
+    color: #00E5C3;
+}
+
+.portada-texto > p:not(.etiqueta) {
+    color: #C5CECC;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.portada-imagen {
+    width: 340px;
+    height: 340px;
+    flex-shrink: 0;
+    background: #111A19;
+    border: 1px solid #244542;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.portada-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.portada-imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    background-color: #00E5C3;
+    color: #080B0D;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #00BFA5;
+    transform: translateY(-2px);
+}
+
+/* CATÁLOGO */
+.catalogo {
+    padding: 70px 7%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-seccion h2,
+.contacto h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion > p:last-child {
+    color: #AEB8B6;
+}
+
+/* CUADRÍCULA DE PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background-color: #111716;
+    border: 1px solid #263633;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    border-color: #00E5C3;
+}
+
+.producto > img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 18px;
+    background-color: #FFFFFF;
+}
+
+.estado {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nuevo {
+    color: #003C32;
+    background-color: #7DFFDB;
+}
+
+.usado {
+    color: #FFFFFF;
+    background-color: #795B20;
+}
+
+.producto-info {
+    padding: 20px;
+}
+
+.categoria {
+    color: #00E5C3;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.producto h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.precio {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00E5C3;
+    margin-bottom: 18px;
+}
+
+/* VER MÁS */
+details {
+    border-top: 1px solid #2A3836;
+    padding-top: 15px;
+}
+
+summary {
+    color: #00E5C3;
+    cursor: pointer;
+    font-weight: bold;
+    list-style-position: inside;
+}
+
+summary:hover {
+    color: #FFFFFF;
+}
+
+.detalles {
+    padding-top: 15px;
+    animation: aparecer 0.3s ease;
+}
+
+.detalles p {
+    font-size: 14px;
+    color: #D1D8D6;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.detalles b {
+    color: #FFFFFF;
+}
+
+.detalles .boton {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* CONTACTO */
+.contacto {
+    text-align: center;
+    padding: 70px 8%;
+    background-color: #102421;
+    border-top: 1px solid #244542;
+}
+
+.contacto > p:not(.etiqueta) {
+    color: #C5CECC;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.contacto .boton {
+    margin-top: 5px;
+}
+
+/* PIE DE PÁGINA */
+.pie {
+    background-color: #050707;
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 1px solid #20302F;
+}
+
+.pie .logo {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pie p {
+    color: #AEB8B6;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.pie .aviso {
+    font-size: 12px;
+    color: #7E8987;
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portada {
+        gap: 25px;
+        padding: 55px 6%;
+    }
+
+    .portada-imagen {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .portada {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 6%;
+    }
+
+    .portada h1 {
+        font-size: 36px;
+    }
+
+    .portada-imagen {
+        width: 100%;
+        max-width: 300px;
+        height: 280px;
+    }
+
+    .catalogo {
+        padding: 50px 5%;
+    }
+
+    .titulo-seccion h2,
+    .contacto h2 {
+        font-size: 29px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .producto > img {
+        height: 260px;
+    }
+
+    .contacto {
+        padding: 50px 6%;
+    }
+}
+
+/* LOGO DE TECNOCELL */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
